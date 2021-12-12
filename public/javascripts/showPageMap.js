@@ -1,9 +1,9 @@
 mapboxgl.accessToken = mapToken;
 const map = new mapboxgl.Map({
   container: "map",
-  style: "mapbox://styles/mapbox/light-v10",
+  style: "mapbox://styles/mapbox/satellite-streets-v11",
   center: restaurant.geometry.coordinates,
-  zoom: 9,
+  zoom: 12,
 });
 
 map.addControl(new mapboxgl.NavigationControl());
