@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap");
+
+* {
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif;
+  
+  }
+  
+.login-content {
+
+    background-color:
+        #ecdcd517;
+    border-radius: 11px;
+    box-shadow: 0px 4px 11px #0a0a0a40;
+    /* height: 256px;*/
+
+}
+
+.login-container{
+    width: 100%;
+  
+}

@@ -1,19 +1,35 @@
 <% layout('layouts/boilerplate')%>
 
-<div class="container d-flex justify-content-center align-items-center mt-5">
-  <div class="row">
+<!DOCTYPE html>
+<html lang="en">
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FoodFiesta</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
+  <link rel="stylesheet" href="/stylesheets/app.css" />
+  <link rel="stylesheet" href="/stylesheets/login.css" />
+</head>
+
+
+<body>
+<div class="container d-flex justify-content-center align-items-center mt-5 col-md-12">
+  <div class="login-container row mb-3">
     <div class="col-md-6 offset-md-3 col-xl-4 offset-xl-4">
-      <div class="card shadow">
-        <img
+      <!-- <div class="card shadow"> -->
+     
+        <!-- <img
           src="https://res.cloudinary.com/dwtkhznmd/image/upload/v1631253060/FoodFiesta/photo-1522336572468-97b06e8ef143_mbs0gx.jpg"
           alt=""
           class="card-img-top"
-        />
-        <div class="card-body">
+        /> -->
+        <div class="login-content card-body">
           <h5 class="card-title">Login</h5>
           <form action="/login" method="POST" class="validated-form" novalidate>
             <div class="mb-3">
-              <label class="form-label" for="username">Username</label>
+              <label class="col-sm-6 col-form-label" for="username">Username</label>
+              
               <input
                 class="form-control"
                 type="text"
@@ -38,8 +54,10 @@
             </div>
             <button class="btn btn-success btn-block">Login</button>
           </form>
-        </div>
+     
       </div>
+      <!-- </div> -->
     </div>
   </div>
 </div>
+</body>

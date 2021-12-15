@@ -120,7 +120,7 @@ app.use(
         "https:" //SHOULD MATCH YOUR CLOUDINARY ACCOUNT!
         // "https://res.cloudinary.com/ite183-project" 
       ],
-      fontSrc: ["'self'", ...fontSrcUrls],
+      fontSrc: ["'self'", "https:",...fontSrcUrls],
     },
   })
 );
