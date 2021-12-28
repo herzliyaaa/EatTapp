@@ -10,7 +10,7 @@ cloudinary.config({
 const storage = new CloudinaryStorage({
   cloudinary,
   params: {
-    folder: "FoodFiesta",
+    folder: "EatTapp",
     allowedFormats: ["jpeg", "png", "jpg"],
   },
 });
