@@ -87,9 +87,9 @@
       <button class="btn btn-success">Submit</button>
     </form>
     <% } %> <% for(let review of restaurant.reviews){ %>
-    <div class="card mb-3">
+    <div class="card mt-3 mb-3">
       <div class="card-bdy">
-        <h5 class="card-title"><%= review.author.username %></h5>
+        <h5 class="card-title mt-2"><%= review.author.username %></h5>
         <p class="starability-result" data-rating="<%= review.rating %>">
           Rated: <%= review.rating %> stars
         </p>

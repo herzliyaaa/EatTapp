@@ -1,14 +1,44 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Red+Hat+Display:400,700,500");
+
+
+
+:root {
+  --black:
+    rgba(0, 0, 0, 1);
+  --emperor:
+    rgba(82, 71, 71, 1);
+  --mist-gray:
+    rgba(196, 196, 196, 1);
+  --coral:
+    rgba(253, 136, 87, 1);
+  --tulip:
+    rgba(255, 148, 144, 1);
+  --white:
+    rgba(255, 255, 255, 1);
+
+  --font-size-xxxs: 15px;
+  --font-size-xxs: 16px;
+  --font-size-xs: 20px;
+  --font-size-xxl: 36px;
+  --font-size-s2: 22px;
+  --font-size-m2: 24px;
+  --font-size-l3: 30px;
+  --font-size-l2: 50px;
+  --font-family-red_hat_display: "Red Hat Display";
+}
 
 * {
-    box-sizing: border-box;
-    font-family: Poppins, sans-serif;
-  
-  }
+  box-sizing: border-box;
+  font-family: var(--font-family-red_hat_display);
+
+}
 
 #cluster-map {
   width: 100%;
-  height: 500px;
+  height: 450px;
+  margin-top: -6px;
+  border-radius: 38px;
 }
 
 #map {
@@ -21,17 +51,27 @@
 
 
 body {
-  font-family: Poppins, sans-serif;
+  font-family: var(--font-family-red_hat_display);
   height: 100vh;
   background-image:
-    url(../stylesheets/login-bg.svg);
+    url(../img/login-bg.svg);
 
   /* linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), 
      url("https://images.unsplash.com/photo-1469234496837-d0101f54be3e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=792&q=80"); */
 
   background-attachment: fixed;
   background-size: cover;
-  background-position: center center;
+  /* background-position: center; */
+}
+
+h1{
+  font-size: var(--font-size-xxl);
+  font-weight: 700
+}
+
+.card-body h3{
+  font-size: var(--font-size-m2);
+  font-weight: 700;
 }
 
 /* 

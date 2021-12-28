@@ -1,7 +1,8 @@
 <% layout('layouts/boilerplate') %>
 <div id="cluster-map"></div>
 <br>
-<!-- <h1>All Restaurants!</h1> -->
+<h1>All Restaurants </h1>
+<!-- <h1>General Santos City</h1> -->
 
 <!-- <div class="container justify-content-center">
   <div class="row">
@@ -14,9 +15,11 @@
 </div> -->
 
 <% for(let restaurant of restaurants) { %>
-<div class="card mb-3">
-  <div class="row">
-    <div class="col-md-4">
+<div class="card mb-3"  style="border-radius: 10px;
+ background: linear-gradient(145deg, #e6e6e6, #ffffff);
+">
+  <div class="row" >
+    <div class="col-md-4" >
       <% if (restaurant.images.length) { %>
       <img class="img-fluid" src="<%= restaurant.images[0].url%> " />
       <% }else{ %>
@@ -29,7 +32,7 @@
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <h5 class="card-title"><%= restaurant.title %></h5>
+        <h3 class="card-title"><%= restaurant.title %></h3>
         <p class="card-text"><%= restaurant.description %></p>
         <p class="card-text">
           <small class="text-muted"> <%= restaurant.location %> </small>
