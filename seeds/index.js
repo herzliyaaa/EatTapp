@@ -34,12 +34,12 @@ const seedDB = async () => {
       author: "613b349088034c00169f5c7c",
       images: [
         {
-          url: "https://res.cloudinary.com/dwtkhznmd/image/upload/v1631271104/FoodFiesta/photo-1514933651103-005eec06c04b_dbjaan.jpg",
-          filename: "FoodFiesta/photo-1514933651103-005eec06c04b_dbjaan",
+          url: "https://res.cloudinary.com/dwtkhznmd/image/upload/v1631271104/EatTapp/photo-1514933651103-005eec06c04b_dbjaan.jpg",
+          filename: "EatTapp/photo-1514933651103-005eec06c04b_dbjaan",
         },
         {
-          url: "https://res.cloudinary.com/dwtkhznmd/image/upload/v1631252847/FoodFiesta/photo-1504754524776-8f4f37790ca0_kdyhjm.jpg",
-          filename: "FoodFiesta/photo-1504754524776-8f4f37790ca0_kdyhjm",
+          url: "https://res.cloudinary.com/dwtkhznmd/image/upload/v1631252847/EatTapp/photo-1504754524776-8f4f37790ca0_kdyhjm.jpg",
+          filename: "EatTapp/photo-1504754524776-8f4f37790ca0_kdyhjm",
         },
       ],
       geometry: {
