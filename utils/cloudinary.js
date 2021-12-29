@@ -12,6 +12,8 @@ const storage = new CloudinaryStorage({
   params: {
     folder: "EatTapp",
     allowedFormats: ["jpeg", "png", "jpg"],
+    use_filename: true,
+    unique_filename:true
   },
 });
 

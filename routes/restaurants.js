@@ -1,12 +1,17 @@
 const express = require("express");
 const router = express.Router();
 const multer = require("multer");
-const { storage } = require("../cloudinary/index");
-const { validateRestaurant, isLoggedIn, isAuthor } = require("../middleware");
+const { storage } = require("../utils/cloudinary");
+const { validateRestaurant, isLoggedIn, isAuthor } = require("../middlewares/middleware");
 const catchAsync = require("../utils/catchAsync");
 const Restaurant = require("../models/restaurant");
 const restaurants = require("../controllers/restaurants");
-const upload = multer({ storage });
+const upload = multer({ storage});
+
+
+
+
+
 
 router
   .route("/")

@@ -1,7 +1,7 @@
 const { restaurantSchema, reviewSchema } = require("./schemas");
-const ExpressError = require("./utils/ExpressError");
-const Restaurant = require("./models/restaurant");
-const Review = require("./models/review");
+const ExpressError = require("../utils/ExpressError");
+const Restaurant = require("../models/restaurant");
+const Review = require("../models/review");
 
 module.exports.validateReview = (req, res, next) => {
   const { error } = reviewSchema.validate(req.body);

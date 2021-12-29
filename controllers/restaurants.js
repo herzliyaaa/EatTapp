@@ -1,12 +1,18 @@
 const Restaurant = require("../models/restaurant");
-const { cloudinary } = require("../cloudinary");
+const {
+  cloudinary
+} = require("../utils/cloudinary");
 const mbxGeocoding = require("@mapbox/mapbox-sdk/services/geocoding");
 const mapBoxToken = process.env.MAPBOX_TOKEN;
-const geocoder = mbxGeocoding({ accessToken: mapBoxToken });
+const geocoder = mbxGeocoding({
+  accessToken: mapBoxToken,
+});
 
 module.exports.index = async (req, res) => {
   const restaurants = await Restaurant.find({});
-  res.render("restaurants/index", { restaurants });
+  res.render("restaurants/index", {
+    restaurants,
+  });
 };
 
 module.exports.renderNewForm = (req, res) => {
@@ -33,7 +39,9 @@ module.exports.createRestaurant = async (req, res, next) => {
 };
 
 module.exports.showRestaurant = async (req, res) => {
-  const { id } = req.params;
+  const {
+    id
+  } = req.params;
   const restaurant = await Restaurant.findById(id)
     .populate({
       path: "reviews",
@@ -46,26 +54,37 @@ module.exports.showRestaurant = async (req, res) => {
     req.flash("error", "Can't find that Restaurant!");
     return res.redirect("/restaurants");
   }
-  res.render("restaurants/show", { restaurant });
+  res.render("restaurants/show", {
+    restaurant,
+  });
 };
 
 module.exports.renderEditForm = async (req, res) => {
-  const { id } = req.params;
+  const {
+    id
+  } = req.params;
   const restaurant = await Restaurant.findById(id);
   if (!restaurant) {
     req.flash("error", "Can't find that Restaurant!");
     return res.redirect("/restaurants");
   }
-  res.render("restaurants/edit", { restaurant });
+  res.render("restaurants/edit", {
+    restaurant,
+  });
 };
 
 module.exports.updateRestaurant = async (req, res) => {
-  const { id } = req.params;
+  const {
+    id
+  } = req.params;
   // console.log("REQUEST BODY", req.body);
   const restaurant = await Restaurant.findByIdAndUpdate(id, {
     ...req.body.restaurant,
   });
-  const imgs = req.files.map((f) => ({ url: f.path, filename: f.filename }));
+  const imgs = req.files.map((f) => ({
+    url: f.path,
+    filename: f.filename,
+  }));
   restaurant.images.push(...imgs);
   await restaurant.save();
   if (req.body.deleteImages) {
@@ -73,7 +92,13 @@ module.exports.updateRestaurant = async (req, res) => {
       await cloudinary.uploader.destroy(filename);
     }
     await restaurant.updateOne({
-      $pull: { images: { filename: { $in: req.body.deleteImages } } },
+      $pull: {
+        images: {
+          filename: {
+            $in: req.body.deleteImages,
+          },
+        },
+      },
     });
   }
   req.flash("success", "Restaurant updated!");
@@ -81,8 +106,14 @@ module.exports.updateRestaurant = async (req, res) => {
 };
 
 module.exports.deleteRestaurant = async (req, res) => {
-  const { id } = req.params;
-  await Restaurant.findByIdAndDelete(id);
-  req.flash("success", "Restaurant deleted!");
-  res.redirect("/restaurants");
-};
+   
+        // Find restaurant by id
+        const restaurant = await Restaurant.findByIdAndDelete(req.params.id);
+
+        // Delete restaurant from db
+        await restaurant.remove();
+     
+        req.flash("success", "Restaurant deleted!");
+        res.redirect("/restaurants");
+        
+      };

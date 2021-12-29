@@ -22,7 +22,7 @@ const mongoSanitize = require("express-mongo-sanitize");
 const helmet = require("helmet");
 const dbUrl = process.env.DB_URL || "mongodb://localhost:27017/food-fiesta";
 
-// const dbUrl = "mongodb://localhost:27017/food-fiesta";
+
 
 mongoose.connect(dbUrl, {
   useNewUrlParser: true,
@@ -41,7 +41,6 @@ app.engine("ejs", ejsMate);
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
-
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname, "public")));
