@@ -28,7 +28,7 @@ const RestaurantSchema = new Schema(
         required: true,
       },
     },
-    price: Number,
+    price: String,
     description: String,
     location: String,
     author: {

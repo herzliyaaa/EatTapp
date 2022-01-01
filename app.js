@@ -86,6 +86,9 @@ const scriptSrcUrls = [
   "https://api.mapbox.com/",
   "https://kit.fontawesome.com/",
   "https://cdnjs.cloudflare.com/",
+  "https://ajax.googleapis.com/",
+  "https://unpkg.com/",
+  "https://maxcdn.bootstrapcdn.com/",
   "https://cdn.jsdelivr.net",
 ];
 const styleSrcUrls = [
@@ -94,6 +97,7 @@ const styleSrcUrls = [
   "https://api.tiles.mapbox.com/",
   "https://fonts.googleapis.com/",
   "https://use.fontawesome.com/",
+  "https://maxcdn.bootstrapcdn.com/",
   "https://cdn.jsdelivr.net",
 ];
 const connectSrcUrls = [

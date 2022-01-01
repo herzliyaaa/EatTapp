@@ -7,7 +7,7 @@ const { validateReview, isLoggedIn, isReviewAuthor } = require("../middlewares/m
 const reviews = require("../controllers/reviews");
 
 router.post("/", isLoggedIn, validateReview, catchAsync(reviews.createReview));
-
+// router.put("/:reviewId/edit-review", isLoggedIn, isReviewAuthor, catchAsync(reviews.updateReview));
 router.delete(
   "/:reviewId",
   isLoggedIn,

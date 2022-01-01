@@ -1,6 +1,9 @@
 <% layout('layouts/boilerplate') %>
+
+
 <link rel="stylesheet" href="/stylesheets/stars.css" />
 <link rel="stylesheet" href="/stylesheets/app.css" />
+
 
 
 <div class="row">
@@ -16,7 +19,8 @@
         <!-- insert -->
 
         <% if(restaurant.images.length < 1 ) { %>
-        <img class="img-fluid" src="https://res.cloudinary.com/ite183-project/image/upload/v1639313403/EatTapp/default_r0wgg4.jpg" alt="" />
+        <img class="img-fluid"
+          src="https://res.cloudinary.com/ite183-project/image/upload/v1641052597/EatTapp/defaultzzz_z3afuz.png" alt="" />
         <% } %>
 
 
@@ -47,10 +51,35 @@
       </ul>
       <% if(currentUser && restaurant.author.equals(currentUser._id)) { %>
       <div class="card-body">
+
+        <!-- Modal -->
+        <div class="modal fade" id="deleteRestoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Remove Restaurant?</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                Are you sure you want to remove this restaurant?
+              </div>
+              <div class="modal-footer">
+                <form class="d-inline" action="/restaurants/<%= restaurant._id %>?_method=DELETE" method="POST">
+                <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-sm btn-danger">Remove</button>
+              </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      <!-- Modal -->
+
         <a class="card-link btn btn-info" href=" /restaurants/<%=restaurant._id %>/edit ">Edit</a>
-        <form class="d-inline" action="/restaurants/<%= restaurant._id %>?_method=DELETE" method="POST">
-          <button class="btn btn-danger">Remove</button>
-        </form>
+       
+        <button type="button" class="btn btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteRestoModal">
+          Delete
+        </button>
+       
       </div>
       <% } %>
       <div class="card-footer text-muted">
@@ -66,7 +95,8 @@
     <form action="/restaurants/<%= restaurant._id %>/reviews" class="mb-3 validate-form" method="POST" novalidate>
       <div class="mb-3">
         <fieldset class="starability-basic">
-          <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="1" checked aria-label="No rating." />
+          <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="1" checked
+            aria-label="No rating." />
           <input type="radio" id="first-rate1" name="review[rating]" value="1" />
           <label for="first-rate1" title="Terrible">1 star</label>
           <input type="radio" id="first-rate2" name="review[rating]" value="2" />
@@ -95,18 +125,50 @@
         </p>
         <p class="card-text">Review: <%= review.body %></p>
         <% if(currentUser && review.author.equals(currentUser._id)) { %>
-        <form action="/restaurants/<%= restaurant._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
-          <button class="btn btn-sm btn-danger">Delete</button>
-        </form>
+
+        <!-- Modal -->
+        <div class="modal fade" id="deleteReviewModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Delete Review?</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                Are you sure you want to delete this review?
+              </div>
+              <div class="modal-footer">
+                <form action="/restaurants/<%= restaurant._id %>/reviews/<%= review._id %>?_method=DELETE" method="POST">
+                <button type="button" class="btn btn-sm btn-outline-primary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+              </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      <!-- Modal -->
+
+      <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#deleteReviewModal">
+        Delete
+      </button>
+
+
+        <!-- <a class="btn-sm btn-info"
+          href=" /restaurants/<%=restaurant._id %>/reviews/<%= review._id %>/edit-review ">Edit</a> -->
+
         <% } %>
       </div>
     </div>
+
+
+
+
     <% } %>
   </div>
 </div>
 
 <script>
   const mapToken = '<%-process.env.MAPBOX_TOKEN%>'
-  const restaurant = <%-JSON.stringify(restaurant) %>
+  const restaurant = <%-JSON.stringify(restaurant)%>
 </script>
 <script src="/javascripts/showPageMap.js"></script>

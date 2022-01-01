@@ -25,7 +25,7 @@
       <% }else{ %>
       <img
         class="img-fluid"
-        src="https://res.cloudinary.com/ite183-project/image/upload/v1639313403/EatTapp/default_r0wgg4.jpg"
+        src="https://res.cloudinary.com/ite183-project/image/upload/v1641052597/EatTapp/defaultzzz_z3afuz.png"
         alt=""
       />
       <% } %>
@@ -33,13 +33,14 @@
     <div class="col-md-8">
       <div class="card-body">
         <h3 class="card-title"><%= restaurant.title %></h3>
-        <p class="card-text"><%= restaurant.description %></p>
+        <p class="card-text"><%= restaurant.description %></p>    
         <p class="card-text">
           <small class="text-muted"> <%= restaurant.location %> </small>
         </p>
+        
         <a
           class="btn btn-primary"
-          style="background-color: #aa210f; border-color: #aa210f"
+          style="background-color: var(--coral); border-color: var(--coral)"
           href="/restaurants/<%= restaurant._id  %> "
           >View</a
         >
