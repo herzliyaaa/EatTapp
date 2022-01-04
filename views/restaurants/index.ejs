@@ -2,8 +2,7 @@
 <div id="cluster-map"></div>
 <br>
 <h1>All Restaurants </h1>
-<!-- <h1>General Santos City</h1> -->
-
+<br>
 <!-- <div class="container justify-content-center">
   <div class="row">
       <div class="col-md-8">
@@ -34,10 +33,12 @@
       <div class="card-body">
         <h3 class="card-title"><%= restaurant.title %></h3>
         <p class="card-text"><%= restaurant.description %></p>    
+      <div class="all-resto-location">
+        <i class='bx bx-map-pin bx-sm'></i>
         <p class="card-text">
           <small class="text-muted"> <%= restaurant.location %> </small>
         </p>
-        
+      </div>
         <a
           class="btn btn-primary"
           style="background-color: var(--coral); border-color: var(--coral)"

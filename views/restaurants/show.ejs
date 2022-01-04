@@ -7,9 +7,11 @@
 
 
 <div class="row">
+  <%- include('../partials/breadcrumb') %>
+
   <div class="col-6">
     <div id="restaurantCarousel" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner">
+      <div class="card-pics carousel-inner">
         <% restaurant.images.forEach((img, i) => { %>
         <div class="carousel-item <%= i === 0 ? 'active' : '' %>">
           <img src="<%= img.url %>" class="d-block w-100" alt="..." />
@@ -37,12 +39,12 @@
       <% } %>
     </div>
 
-    <div class="card mb-3">
+    <div class="card-bottom card mb-3">
       <div class="card-body">
         <h5 class="card-title"><%=restaurant.title %></h5>
         <p class="card-text"><%= restaurant.description %></p>
       </div>
-      <ul class="list-group list-group-flush">
+      <ul class="card-list list-group list-group-flush">
         <li class="list-group-item text-muted"><%= restaurant.location %></li>
         <li class="list-group-item">
           Submitted by <%= restaurant.author.username %>
@@ -91,9 +93,10 @@
   <div class="col-6">
     <div id="map"></div>
     <% if(currentUser){ %>
+      <div class="review-section mt-3 mb-3">
     <h2>Leave a Review</h2>
     <form action="/restaurants/<%= restaurant._id %>/reviews" class="mb-3 validate-form" method="POST" novalidate>
-      <div class="mb-3">
+      <div class="stars mb-3">
         <fieldset class="starability-basic">
           <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="1" checked
             aria-label="No rating." />
@@ -109,21 +112,27 @@
           <label for="first-rate5" title="Amazing">5 stars</label>
         </fieldset>
       </div>
+    </div>
       <div class="mb-3">
         <label class="form-label" for="body">Review Text</label>
-        <textarea class="form-control" name="review[body]" id="body" cols="30" rows="4" required></textarea>
+        <textarea class="review-txt form-control" name="review[body]" id="body" cols="30" rows="4" required></textarea>
         <div class="valid-feedback">Looks good!</div>
       </div>
       <button class="btn btn-success">Submit</button>
     </form>
+ 
     <% } %> <% for(let review of restaurant.reviews){ %>
-    <div class="card mt-3 mb-3">
+    <div class="review card mt-3 mb-3">
+      
       <div class="card-bdy">
+        <div class="user-avatar">
+        <i class='bx bxs-user-circle bx-md' style="color: var(--coral);"></i> 
         <h5 class="card-title mt-2"><%= review.author.username %></h5>
+      </div>
         <p class="starability-result" data-rating="<%= review.rating %>">
           Rated: <%= review.rating %> stars
         </p>
-        <p class="card-text">Review: <%= review.body %></p>
+        <p class="card-text"><strong>"</strong><%= review.body %><strong>"</strong></p>
         <% if(currentUser && review.author.equals(currentUser._id)) { %>
 
         <!-- Modal -->

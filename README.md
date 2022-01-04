@@ -1,5 +1,5 @@
 <p align="center">
-     <img src="public/img/logo-readme.png" alt="Logo" width="300" height="300" margin="0px">
+     <img src="public/img/logo-readme.png" alt="Logo" width="400" height="350" margin="0px">
     <h1 align="center">EatTapp</h3>
 </p>
 

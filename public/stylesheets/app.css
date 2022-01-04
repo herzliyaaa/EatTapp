@@ -16,6 +16,7 @@
     rgba(255, 148, 144, 1);
   --white:
     rgba(255, 255, 255, 1);
+  --purple: #761db2;
 
   --font-size-xxxs: 15px;
   --font-size-xxs: 16px;
@@ -44,6 +45,7 @@
 #map {
   width: 100%;
   height: 300px;
+  border-radius:30px;
 }
 
 /* Login */
@@ -53,8 +55,8 @@
 body {
   font-family: var(--font-family-red_hat_display);
   height: 100vh;
-  background-image:
-    url(../img/login-bg.svg);
+   background-image:
+    url(../img/login-bg.svg); 
 
   /* linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), 
      url("https://images.unsplash.com/photo-1469234496837-d0101f54be3e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=792&q=80"); */
@@ -69,9 +71,115 @@ h1{
   font-weight: 700
 }
 
+
+
+
+/* SHOW RESTAURANT */
+
+.breadcrumb {
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+.breadcrumb a {
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+.breadcrumb-item.active {
+  color: var(--black);
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+  color: var(--black);
+}
+
+.review {
+  border-radius: 15px;
+ 
+}
+
+.card-pics{
+  border-radius:30px 30px 0px 0px;
+  border:solid #f15461;
+}
+
+.card-bottom{
+  border-radius:0px 0px 30px 30px;
+  border:solid #f15461;
+}
+
+
+.review-section h2{
+font-family: 'Poppins';
+font-weight: 600;
+}
+
 .card-body h3{
   font-size: var(--font-size-m2);
   font-weight: 700;
+}
+
+.card-body h5{
+  font-family: 'Poppins';
+  font-weight: 800;
+}
+
+.card-body p{
+  font-family: 'Poppins';
+  font-weight: 400;
+}
+
+.card-bdy{
+  /* text-align: justify;
+  text-justify: inter-word; */
+  padding: 1rem;
+}
+
+
+.card-list li{
+  font-family: 'Poppins';
+  font-weight: 600;
+}
+
+.stars {
+  height: 30px;
+}
+
+.user-avatar{
+  justify-content: start;
+  align-items: center;
+  display: flex;
+  /* margin-left: 10px; */
+}
+
+.user-avatar h5{
+ margin-left: 10px;
+}
+.review-txt {
+  border: solid var(--black) 2px;
+  border-radius: 20px;
+}
+
+.quote{
+  font-size: var(--font-size-xxl);
+  font-family: Poppins;
+  margin: 0px;
+}
+
+
+/* INDEX */
+
+.all-resto-location{
+  justify-content: start;
+  align-items: center;
+  display: flex;
+  margin-bottom: 12px;
+}
+
+.all-resto-location p {
+  margin-left: 10px;
+
 }
 
 /* 
