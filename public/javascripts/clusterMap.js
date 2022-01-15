@@ -1,7 +1,7 @@
 mapboxgl.accessToken = mapToken;
 const map = new mapboxgl.Map({
   container: "cluster-map",
-  style: "mapbox://styles/mapbox/satellite-streets-v11",
+  style: "mapbox://styles/mapbox/dark-v10",
   center: [121.9629, 12.59],
   zoom: 4.2,
 });
@@ -36,7 +36,7 @@ map.on("load", function () {
       "circle-color": [
         "step",
         ["get", "point_count"],
-        "#EE9781",
+        "#ab7cca",
         10,
         "#E76F51",
         30,
@@ -64,7 +64,7 @@ map.on("load", function () {
     source: "restaurants",
     filter: ["!", ["has", "point_count"]],
     paint: {
-      "circle-color": "#EE9781",
+      "circle-color": "#ab7cca",
       "circle-radius": 4,
       "circle-stroke-width": 1,
       "circle-stroke-color": "#fff",

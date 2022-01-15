@@ -76,17 +76,17 @@
         </div>
       <!-- Modal -->
 
-        <a class="card-link btn btn-info" href=" /restaurants/<%=restaurant._id %>/edit ">Edit</a>
+        <a class="edit btn" href=" /restaurants/<%=restaurant._id %>/edit ">Edit</a>
        
-        <button type="button" class="btn btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteRestoModal">
+        <button type="button" class="del btn" data-bs-toggle="modal" data-bs-target="#deleteRestoModal">
           Delete
         </button>
-       
+     
+          <a class="back-btn btn" style="margin-left: 20rem;" href="/restaurants">All Restaurants</a>
+      
       </div>
       <% } %>
-      <div class="card-footer text-muted">
-        <a href="/restaurants">All Restaurants</a>
-      </div>
+      
     </div>
   </div>
 

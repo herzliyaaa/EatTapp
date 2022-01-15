@@ -18,22 +18,25 @@
 <body>
 <div class="container d-flex justify-content-center align-items-center mt-5 col-md-12">
   <div class="login-container row mb-3">
-    <div class="col-md-6 offset-md-3 col-xl-4 offset-xl-4">
+    <div class=" col-md-6 offset-md-3 col-xl-4 offset-xl-4">
      <!-- <div class="card shadow">  -->
-     
+       <br>
+      <h4 class="card-title text-end" style="color: white;font-weight: 700;">Sign in to your account</h4>
        <!-- <img
-          src="https://res.cloudinary.com/dwtkhznmd/image/upload/v1631253060/EatTapp/photo-1522336572468-97b06e8ef143_mbs0gx.jpg"
+       src="https://res.cloudinary.com/ite183-project/image/upload/v1641052597/EatTapp/defaultzzz_z3afuz.png"
           alt=""
           class="card-img-top"
         />  -->
+
+        <br>
         <div class="login-content card-body">
-          <h5 class="card-title">Login</h5>
+          
           <form action="/login" method="POST" class="validated-form" novalidate>
             <div class="mb-3">
-              <label class="col-sm-6 col-form-label" for="username">Username</label>
+              <label class="log-label col-sm-6 col-form-label" for="username">Username</label>
               
               <input
-                class="form-control"
+                class="log-inputs form-control"
                 type="text"
                 id="username"
                 name="username"
@@ -44,9 +47,9 @@
             </div>
 
             <div class="mb-3">
-              <label class="form-label" for="password">Password</label>
+              <label class="log-label form-label" for="password">Password</label>
               <input
-                class="form-control"
+                class="log-inputs form-control"
                 type="password"
                 id="password"
                 name="password"
@@ -54,11 +57,16 @@
               />
               <div class="valid-feedback">Looks good!</div>
             </div>
-            <button class="btn btn-success btn-block">Login</button>
+            <div class="flex-btn">
+            <button class="login-resto btn">Sign In</button>
+            </div>
           </form>
      
       </div>
       <!-- </div> -->
+      <div class="col mt-4 ">
+      <a class="register-link" href="/register">Don't have an account?</a>
+    </div>
     </div>
   </div>
 </div>

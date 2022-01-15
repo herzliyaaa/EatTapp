@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Red+Hat+Display:400,700,500");
+
+
+
+:root {
+  --black:
+    rgba(0, 0, 0, 1);
+  --emperor:
+    rgba(82, 71, 71, 1);
+  --mist-gray:
+    rgba(196, 196, 196, 1);
+  --coral:
+    rgba(253, 136, 87, 1);
+  --tulip:
+    rgba(255, 148, 144, 1);
+  --white:
+    rgba(255, 255, 255, 1);
+  --purple: #761db2;
+
+  --font-size-xxxs: 15px;
+  --font-size-xxs: 16px;
+  --font-size-xs: 20px;
+  --font-size-xxl: 36px;
+  --font-size-s2: 22px;
+  --font-size-m2: 24px;
+  --font-size-l3: 30px;
+  --font-size-l2: 50px;
+  --font-family-red_hat_display: "Red Hat Display";
+}
+
+* {
+  box-sizing: border-box;
+  font-family: var(--font-family-red_hat_display);
+
+}
+
+body {
+    font-family: var(--font-family-red_hat_display);
+    height: 100vh;
+     background-image:
+      url(../img/a.svg); 
+  
+    /* linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), 
+       url("https://images.unsplash.com/photo-1469234496837-d0101f54be3e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=792&q=80"); */
+  
+    background-attachment: fixed;
+    background-size: cover;
+     background-position: center center; 
+  }
+
+.new-resto, .back-resto { 
+  background-color: #C242DA;
+  color: var(--white);
+  font-weight: 700;
+  margin: 20px 5px;
+
+}
+
+.new-resto:hover, .back-resto:hover { 
+  background-color: var(--coral);
+  color: var(--white);
+  font-weight: 700;
+
+}
+
+.res-label {
+  font-size: var(--font-size-xxxs);
+  font-family: var(--font-family-red_hat_display);
+  font-weight: 700;
+}
+
+/* //flex button */
+
+.flex-btn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.box-inputs {
+  box-shadow: 0px 4px 8px 
+  #0a0a0a40;
+}

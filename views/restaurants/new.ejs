@@ -1,8 +1,17 @@
 <% layout('layouts/boilerplate') %>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EatTapp</title>
+ 
+  <link rel="stylesheet" href="/stylesheets/new-resto.css" />
+</head>
+
 
 <div class="row">
-  <h1 class="text-center" style="color: white;">New Restaurant</h1>
-  <div class="col-md-6 offset-md-3">
+  <h1 class="text-center" style="    color: white;
+  margin-bottom: 1.7rem;">New Restaurant</h1>
+  <div class="form-containerz col-md-6 offset-md-3">
     <form
       action="/restaurants"
       method="POST"
@@ -11,9 +20,9 @@
       enctype="multipart/form-data"
     >
       <div class="mb-3">
-        <label class="form-label" for="title">Title</label>
+        <label class="res-label form-label" for="title">Title</label>
         <input
-          class="form-control"
+          class="box-inputs form-control"
           type="text"
           id="title"
           name="restaurant[title]"
@@ -22,9 +31,9 @@
         <div class="valid-feedback">Looks good!</div>
       </div>
       <div class="mb-3">
-        <label class="form-label" for="location">Location</label>
+        <label class="res-label form-label" for="location">Location</label>
         <input
-          class="form-control"
+          class="box-inputs form-control"
           type="text"
           id="location"
           name="restaurant[location]"
@@ -33,12 +42,12 @@
         <div class="valid-feedback">Looks good!</div>
       </div>
       <div class="mb-3">
-        <label class="form-label" for="price">Price Range</label>
+        <label class="res-label form-label" for="price">Price Range</label>
         <div class="input-group">
-          <span class="input-group-text" id="price-label">₱</span>
+          <span class="box-inputs input-group-text" id="price-label">₱</span>
           <input
             type="text"
-            class="form-control"
+            class="box-inputs form-control"
             id="price"
             placeholder="0.00"
             name="restaurant[price]"
@@ -50,9 +59,9 @@
       </div>
 
       <div class="mb-3">
-        <label class="form-label" for="description">Description</label>
+        <label class="res-label form-label" for="description">Description</label>
         <textarea
-          class="form-control"
+          class="box-inputs form-control"
           type="text"
           id="description"
           name="restaurant[description]"
@@ -61,22 +70,23 @@
         <div class="valid-feedback">Looks good!</div>
       </div>
       <div class="mb-3">
-        <label for="images" class="form-label">Upload Images</label>
+        <label for="images" class="res-label form-label">Upload Images</label>
         <input
           name="image"
-          class="form-control"
+          class="box-inputs form-control"
           type="file"
           id="images"
           multiple
         />
       </div>
-      <div class="mb-3">
-        <button class="btn btn-success">Add Restaurant</button>
+      <div class="flex-btn mb-3">
+       
+          <a  class="back-resto btn" href="/restaurants">All Restaurants</a>
+        
+        <button class="new-resto btn">Add Restaurant</button>
       </div>
     </form>
 
-    <footer>
-      <a href="/restaurants">All Restaurants</a>
-    </footer>
+    
   </div>
 </div>

@@ -25,7 +25,7 @@ module.exports.renderLogin = (req, res) => {
 };
 
 module.exports.login = (req, res) => {
-  req.flash("success", "Welcome Back");
+  req.flash("success", "Welcome"  );
   const redirectUrl = req.session.returnTo || "/restaurants";
   delete req.session.returnTo;
   res.redirect(redirectUrl);
@@ -33,6 +33,6 @@ module.exports.login = (req, res) => {
 
 module.exports.logout = (req, res) => {
   req.logout();
-  req.flash("success", "Goodbye!");
+  req.flash("success", "Successfully Logout!");
   res.redirect("/restaurants");
 };

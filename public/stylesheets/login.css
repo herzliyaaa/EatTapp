@@ -1,22 +1,78 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap");
 
 * {
     box-sizing: border-box;
-    font-family: Poppins, sans-serif;
-  
-  }
-  
+    font-family: var(--font-family-red_hat_display);
+
+}
+
+body {
+    font-family: var(--font-family-red_hat_display);
+    height: 100vh;
+    background-image:
+        url(../img/a.svg);
+
+    /* linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), 
+       url("https://images.unsplash.com/photo-1469234496837-d0101f54be3e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=792&q=80"); */
+
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+}
+
 .login-content {
 
-    background-color:
-        #ecdcd517;
+
+    background-color: #ecdcd529;
     border-radius: 11px;
     box-shadow: 0px 4px 11px #0a0a0a40;
-    /* height: 256px;*/
 
+
+    padding: 40px;
 }
 
-.login-container{
+.login-container {
     width: 100%;
-  
+
 }
+
+.login-resto,
+.reg-resto {
+    background-color: var(--coral);
+    color: var(--white);
+    font-weight: 700;
+    margin: 5px 5px;
+
+}
+
+.login-resto:hover,
+.reg-resto:hover {
+    background-color: #C242DA;
+    color: var(--white);
+    font-weight: 700;
+
+}
+
+.log-label {
+    font-size: var(--font-size-xxxs);
+    font-family: var(--font-family-red_hat_display);
+    font-weight: 700;
+}
+
+/* //flex button */
+
+.flex-btn {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.log-inputs {
+    box-shadow: 0px 4px 8px #0a0a0a40;
+}
+
+.register-link {
+    color: gray;
+    font-size: var(--font-size-xxxs)
+}
+
+

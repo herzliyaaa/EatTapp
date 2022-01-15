@@ -34,14 +34,14 @@
         <h3 class="card-title"><%= restaurant.title %></h3>
         <p class="card-text"><%= restaurant.description %></p>    
       <div class="all-resto-location">
-        <i class='bx bx-map-pin bx-sm'></i>
+        <img src="https://res.cloudinary.com/ite183-project/image/upload/v1642266888/EatTapp/icons/icon-gl_djridp.svg">
         <p class="card-text">
           <small class="text-muted"> <%= restaurant.location %> </small>
         </p>
       </div>
         <a
-          class="btn btn-primary"
-          style="background-color: var(--coral); border-color: var(--coral)"
+          class="view btn"
+         
           href="/restaurants/<%= restaurant._id  %> "
           >View</a
         >
