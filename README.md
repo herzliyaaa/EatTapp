@@ -9,14 +9,21 @@
 
 <!-- ! insert screenshot [Screen Shot](images/screenshot.png) -->
 
-***Insert Description***
+EatTapp is a web application that will help users locate the best cuisine and dining experiences at different restaurants in the Philippines. Food critics, bloggers, and regular customers can write their own opinions and rate the restaurant to this review application. Users can check out the reviews of other customers about restaurants to get detailed information about them. Every user of EatTapp can also add a restaurant. The added restaurant will appear on a map, making it easier for other customers to discover the restaurant based on location. 
+
+
 
 #### Features:
 
-* 
-* 
-*  
- 
+* Create an account and login. 
+* Users can create, read, update, and delete restaurant details.
+* Users can rate and review restaurants. 
+* Only the user who adds the restaurant can edit it.
+* Guests can only view restaurant details.
+* Locate restaurants on a map based on their location.
+* Users can use the back to top button in order to ease the actions.
+* Has a user-friendly interface and mobile responsiveness.
+
 
 ## Built With
 
